@@ -1,0 +1,118 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans';
+}
+
+button {
+  padding: 0.75em 1em;
+  border-radius: 0;
+  line-height: 1;
+  background-color: transparent;
+}
+
+
+
+.container{
+  min-height: 100vh;
+  background: rgb(241, 242, 244);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator{
+  margin-inline: auto;
+  border-radius: .3rem;
+  overflow: hidden;
+  background: white;
+  box-shadow:
+  0.3px 0px 3.6px rgba(0, 0, 0, 0.007),
+  0.8px 0px 10px rgba(0, 0, 0, 0.01),
+  1.8px 0px 24.1px rgba(0, 0, 0, 0.013),
+  6px 0px 80px rgba(0, 0, 0, 0.02)
+;
+}
+
+.calculator__display{
+  height: 5rem;
+  padding: 1rem 1rem;
+  background: rgb(105, 173, 144);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+  button{
+    font-size: 2rem;
+  }
+
+  .calculator__display{
+    padding-block: 2rem; 
+  }
+}
+.calculator__keys{
+  display: grid;
+  grid-template-columns: repeat(4, auto); 
+  grid-template-areas: 
+    ". . . ."
+    "seven eight nine equal"
+    "four five six equal"
+    "one two three equal"
+    "cero decimal clear equal"
+    ;
+}
+
+.calculator__keys > button {
+  border: none;
+  cursor: pointer;
+}
+.calculator__keys > button:hover:not(.equal) {
+  background: rgb(230, 236, 229);
+}
+.calculator__keys > .equal:hover{
+  background: rgb(89, 147, 122);
+}
+.one{
+  grid-area: one;
+}
+.two{
+  grid-area: two;
+}
+.three{
+  grid-area: three;
+}
+.four{
+  grid-area: four;
+}
+.five{
+  grid-area: five;
+}
+.six{
+  grid-area: six;
+}
+.seven{
+  grid-area: seven;
+}
+.eight{
+  grid-area: eight;
+}
+.nine{
+  grid-area: nine;
+}
+.cero{
+  grid-area: cero;
+}
+.decimal{
+  grid-area: decimal;
+}
+.clear{
+  grid-area: clear;
+}
+.equal{
+  grid-area: equal;
+  background: rgb(105, 173, 144);
+}

@@ -1,0 +1,121 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background: rgb(225, 226, 231);
+}
+img{
+    display: block;
+}
+
+p{
+    color: rgb(98, 102, 122);
+    line-height: 1.5;
+}
+ul{
+    color: rgb(98, 102, 122);
+    list-style-position: inside;
+}
+section{
+    padding: 5rem 0;
+    min-height: 100vh;
+}
+
+
+.section-header{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h1{
+    font-size: 2.5rem;
+    color:rgb(31, 32, 39);   
+}
+
+.section-split{
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+}
+
+.img-container{
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow:
+    0 4.5px 3.6px rgba(0, 0, 0, 0.028),
+    0 12.5px 10px rgba(0, 0, 0, 0.04),
+    0 30.1px 24.1px rgba(0, 0, 0, 0.052),
+    0 100px 80px rgba(0, 0, 0, 0.08)
+    ;
+
+}
+
+.img-container img{
+    height: 20rem;
+    width: 100%;
+    object-fit:cover;
+}
+
+.about{
+    background: white;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.about h4{
+    font-size: 1.125rem;
+    margin-bottom: .5rem;
+    color:rgb(31, 32, 39); 
+}
+
+.btn-container{
+    background: red;
+    display: flex;
+}
+
+.tab-btn {
+    border: none;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1rem;
+    background: rgb(157, 170, 179);
+    cursor: pointer;
+}
+
+.tab-btn.active{
+    background: white;
+    cursor:initial
+}
+
+.content{
+    padding: 2rem;
+    display: none;
+    z-index: -1;
+}
+
+.active {
+    display: block;
+    z-index: 1;
+}
+
+
+
+@media screen and (max-width: 1000px){
+ 
+
+    .section-split{
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        grid-template-rows: 20rem 1fr;
+    }
+
+    
+}
+

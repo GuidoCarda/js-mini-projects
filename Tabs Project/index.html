@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>     
+<body>
+    <section>
+        <div class="section-header">
+            <h1>About</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, harum.</p>
+        </div>
+
+        <div class="section-split">
+            <div class="img-container">
+                <img src="hero-bcg.jpeg" alt="paisaje">
+            </div>
+            <div class="about">
+                <div class="btn-container">
+                    <button class="tab-btn active" data-id="history">History</button>
+                    <button class="tab-btn" data-id="vision">Vision</button>
+                    <button class="tab-btn" data-id="goals">Goals</button>
+                </div>
+                <div class="about-content">
+                    <!-- Single item 1 -->
+                    <div class="content" id="history">
+                        <h4>History</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas omnis, ea tempora repudiandae nostrum tenetur iste, nam voluptates dicta nemo, nesciunt neque sit doloribus unde expedita iusto sint quis dolore.</p>
+                    </div>
+                    <!-- Single item 2 -->
+                    <div class="content active" id="vision">
+                        <h4>Vision</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas omnis, ea tempora repudiandae nostrum tenetur iste, nam voluptates dicta nemo, nesciunt neque sit doloribus unde expedita iusto sint quis dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, modi?</p>
+
+
+                    </div>
+                    <!-- Single item 3 -->
+                    <div class="content" id="goals">
+                        <h4>Goals</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas omnis, ea tempora repudiandae nostrum tenetur iste, nam voluptates dicta nemo, nesciunt neque sit doloribus unde expedita iusto sint quis dolore.</p>
+                        
+                        <ul>
+                            <li>Lorem, ipsum.</li>
+                            <li>Lorem ipsum dolor sit.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.scroll-link{
+    text-decoration: none;
+    font-size: 1.125rem;
+    color: white;
+}
+
+.container{
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.btn{
+    height: 3rem;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+.btn-primary{
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+}
+
+.section h2{
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+#about,
+#services,
+#tours{
+    height: 80vh;
+    padding: 2rem 0rem;
+}
+
+#services{
+    background: rgb(209, 209, 209);
+}
+
+#footer{
+    background: grey;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+
+/* NAV BAR */
+nav{
+    padding: 1.5rem 1.25rem;
+}
+.nav-center{
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.fixed-navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: white;
+}
+
+.fixed-navbar a {
+    color: black;
+}
+.nav-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-toggle{
+    display: none;
+    background: none;
+    font-size: 2rem;
+    border: none;
+}
+.list{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+/* HERO SECTION */
+header{
+    min-height: 100vh;
+    background: linear-gradient(rgba(44, 44, 44, 0.5),  rgba(0, 0, 0, 0.7)), url('hero-bcg.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+header .container{
+    max-width: 610px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.hero .container h1{
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+.hero .container p{
+    padding: 2rem 0;
+}
+
+
+.top-link{
+    height: 3.5rem;
+    width: 3.5rem;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    font-size: 2rem;
+    background: rgb(116, 218, 121);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.show-top-link{
+    visibility: visible;
+    z-index: 1;
+}
+
+
+
+@media screen and (max-width:600px){
+    nav{
+        background: white;
+        padding-bottom: 1rem;
+    }
+    .nav-toggle{
+        display: block;
+    }
+    .nav-center{
+        flex-direction: column;
+    }
+    .links-container{
+        width: 100vw;
+        height: 0;
+        overflow: hidden;
+    }
+    .show-links{
+        height: auto;
+    }
+    .list{
+        margin-top: 1.5rem;
+        flex-direction: column;
+        gap: 0;
+    }
+    .list .scroll-link{
+        display: block;
+        padding: 2rem 1.5rem;
+        color: black;
+    }
+    .scroll-link:hover{
+        background: rgb(78, 162, 195);
+    }
+}

@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserray', sans-serif;
+}
+
+nav{
+    background: blue;
+}
+.nav-center{
+    max-width: 1170px;
+    margin: 0 auto;
+    background: lightgray;
+}
+
+.nav-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem;
+    background: lightsalmon;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-toggle{
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.links{
+    list-style: none;
+    background: lightpink;
+    overflow: hidden;
+    display: none;
+}
+
+.show-links{
+    display: block;
+    position: absolute;
+    width: 100%;
+}
+
+
+.links a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    color: rgb(39, 39, 39);
+}
+
+.social-icons{
+    display: none;
+}
+
+main{
+    max-width: 1170px;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    height: calc(92vh);
+    align-items: center;
+    justify-items: center;
+}
+
+img{
+    width: 100%;
+}
+
+.main-info{
+    text-align: center;
+}
+
+.main-info h1{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.main-info p{
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    color: rgb(97, 113, 131);
+}
+
+.main-info button{
+    border: none;
+    background: rgb(116, 116, 116);
+    border-radius: 5px;
+    padding: 0.875rem 1.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.main-img{
+   align-content: center;
+   justify-content: center;
+   width: 90%;
+}
+
+@media screen and (min-width: 800px){
+    .nav-header{
+        padding: 0;
+    }
+    .nav-toggle{
+        display: none;
+    }
+    .nav-center{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    .links{
+        display: flex;
+    }
+
+    .social-icons{
+        display: flex;
+        list-style: none;
+        gap: .875rem;
+    }
+
+    .social-icons a{
+        color: rgb(30, 149, 189);
+        font-size: 1.125rem;
+    }
+
+    .main-info{
+        text-align: start;
+    }
+}
+

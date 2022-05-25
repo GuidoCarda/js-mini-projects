@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+section{
+    min-height: 100vh;
+    background: rgb(232, 234, 236);
+    display: grid;
+}
+
+.container{
+    width: 90%;
+    max-width: 1170px;
+    margin: auto;
+    display: flex;  
+    gap: 2rem;
+    place-content: center;
+    padding: 2rem 0;
+}
+
+.container > *{
+    flex-basis: 100%;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.gift-img{
+    min-height: 10rem;
+    object-fit: cover;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0px 30px 40px 0px rgba(0, 0, 0, 0.125);
+}
+
+.gift-info{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.gift-info h3{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: .5rem;
+}
+.gift-info p{
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    color: rgb(112, 118, 131);
+}
+
+.deadline{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.deadline-box{
+    background: rgb(255, 255, 255);
+    display: grid;
+    place-content: center;
+    text-align: center;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 4px;
+    text-transform: lowercase;
+    font-size: 0.875rem;
+    box-shadow: 0px 0px 15px 0px rgba(75, 47, 47, 0.055);
+}
+
+.deadline-box h4{
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1170px){
+    .container{
+        flex-direction: column;
+    }
+}
