@@ -30,14 +30,17 @@ let word = "";
 let attempts;
 
 const letterContainer = document.querySelector('.letter-list');
-let letters;
+let letters; 
+let gessed;
 const wordContainer = document.querySelector('.word');
 const attemptsCounter = document.querySelector('.attempts');
 const hintBtn = document.querySelector('.hint-btn');
 const hintContainer = document.querySelector('.hint');
+const lostGame = document.querySelector('.lost-game');
+const winnedGame = document.querySelector('.winned-game');
 
 const randomizeWord = () => {
-  return Math.floor(Math.random() * ( words.length - 0 ) + 0);
+  return words[Math.floor(Math.random() * ( words.length - 0 ) + 0)];
 }
 
 const generateLetterBtns = () => {
@@ -53,13 +56,12 @@ const generateLetterBtns = () => {
   letters.forEach( btn => btn.addEventListener( 'click' ,(e) => checkLetter(e)));
 }
 
-
 const startGame = () => {
+  guessed = 0;
   attempts = 5;
   updateAttempts()
-  wordData = words[randomizeWord()]
+  wordData = randomizeWord();
   word = [...wordData.word]
-  console.log( word )
   word.forEach( letter => {
     const span = document.createElement('span');
     wordContainer.appendChild(span);
@@ -67,13 +69,15 @@ const startGame = () => {
 }
 
 const checkLetter = (e) => {
-  if(attempts=== 0) return alert('No more attempts')
   const selectedLetter = e.target.textContent.toLowerCase();
   e.target.disabled = true;
   if(!word.includes(selectedLetter)){
     e.target.classList.add('is-not-in');
     attempts--;
     updateAttempts();
+    if(attempts=== 0){
+      lostGame.classList.add('show')
+    }
     return
   }
   
@@ -81,21 +85,42 @@ const checkLetter = (e) => {
     if(letter === selectedLetter){
       wordContainer.children[index].textContent = letter;
       e.target.classList.add('is-in');
+      guessed++;
     }
   })
+  if(guessed === word.length){
+    winnedGame.classList.add('show')
+  }
 }
 
 const updateAttempts = () => {
   return attemptsCounter.innerHTML = `Tienes ${attempts} intentos restantes`
 }
 
-
 const showHint = () => {
-  console.log(word);
-  hintContainer.innerHTML = wordData.hint;
+  if(hintContainer.hasChildNodes()) return
+  const hintElem = document.createElement('p');
+  hintElem.textContent = wordData.hint;
+  hintContainer.appendChild(hintElem); 
 }
 
-hintBtn.addEventListener('click', showHint)
+const resetGame = () => {
+  console.log('entro')
+  lostGame.classList.remove('show');
+  winnedGame.classList.remove('show');
+
+  letters.forEach( letterBtn => {
+    letterBtn.classList.remove('is-in','is-not-in')
+    letterBtn.disabled = false;
+  })
+  wordContainer.innerHTML = '';
+  hintContainer.innerHTML = '';
+  guessed = 0;
+  startGame();
+}
+
+hintBtn.addEventListener('click', showHint);
+document.querySelectorAll('.reset-game-btn').forEach( resetBtn => resetBtn.addEventListener('click', resetGame))
 
 generateLetterBtns()
 startGame()

@@ -26,6 +26,7 @@ button{
   min-height: 100vh;
   display: grid;
   place-content: center;
+  padding-block: 2rem;
 }
 
 h1{
@@ -34,14 +35,14 @@ h1{
 
 p{
   color: grey;
-  max-width: 40ch;
   justify-self: center;
+  line-height: 1.5;
 }
 
 .letter-list{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 2rem);
-  align-content: center;
+  max-width: 40rem;
+  display: flex;
+  flex-wrap: wrap;
   gap: .5rem;
   margin-top: 2rem;
   justify-content: center;
@@ -66,6 +67,11 @@ p{
  cursor:not-allowed;
 }
 
+.letter-btn.is-in,
+.letter-btn.is-not-in{
+  opacity: 1;
+  transition: all .5s ease-out;
+}
 
 .letter-btn.is-in{
   background: rgb(70, 171, 110);
@@ -105,3 +111,54 @@ p{
   border: none;
   background: rgb(91, 187, 91);
 }
+
+.hint{
+  margin-top: 2rem;
+  max-width: 50ch;
+  justify-self: center;
+  background: rgb(255, 255, 255);
+  border-radius: .5rem;
+}
+
+.hint > p {
+  padding: 1rem;
+}
+
+.lost-game,
+.winned-game{
+  position: absolute;
+  place-content: center;
+  height: 100vh;
+  width: 100vw;
+  gap: 1.5rem;
+  display: grid;
+  visibility: hidden;
+  opacity: 0;
+  transform:translateY(-1rem);
+  transition: all .5s;
+}
+
+.lost-game.show,
+.winned-game.show{
+  opacity: 1;
+  transform:translateY(0);
+  visibility: visible;
+}
+
+.lost-game{
+  background: rgb(224, 174, 174);
+  color: rgb(133, 35, 35);
+}
+
+.winned-game{
+  background: rgb(174, 224, 189);
+  color: rgb(35, 133, 63);
+}
+
+.reset-game-btn{
+  width: max-content;
+  justify-self: center;
+  padding: .4rem .8rem;
+  border-radius: .3rem;
+}
+
